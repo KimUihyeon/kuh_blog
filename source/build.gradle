@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'java'
+    id 'war'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.web.kuh'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+    // 하이버네이트 jap
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.7.RELEASE'
+
+    // Spring boot JDBC
+    compile "org.springframework.boot:spring-boot-starter-jdbc"
+    // end Spring boot JDBC
+
+
+    // DB Connection
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+    // End DB Connection
+
+
+    // jsp 템플릿
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+    // end Jsp
+}
