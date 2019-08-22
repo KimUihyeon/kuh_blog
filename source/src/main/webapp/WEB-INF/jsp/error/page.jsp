@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-    애러페이지
-    ${error}
+    <div>${error}</div>
+    <div>${errorMsg}</div>
 </body>
 </html>

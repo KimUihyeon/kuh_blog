@@ -6,19 +6,18 @@
 
 > 개발 환경
 
-|구분| 이름 | 버전 | 비고 |
-|---|-----|-----|-----|
-|server| tomcat| 7.0||
-|배포|리눅스 서버||
-|ci|||차후 도커?|
-|db| maria db |||
-|db| DBMS ||미정|
-|||||
-|형상관리|github||
-|이슈트레킹|trello - git||
-|ide| inteliJ | ||
-|java| jdk | 1.8 ||
-|fw| Spring mvc | 4.3.18||
+* chrom (ie는 포기한다. promise,,)
+
+* tomcat 9.0 Sptring boot 내장톰켓.
+* Spring boot 2.1.0
+* maria DB
+
+* 부트스트랩 3.3.5
+* vueJs 2.1.0
+* jQuery 3.4.1
+* momnetjs 2.24.0
+* Summner Note 0.8.0
+* promise
 
 
 ---
