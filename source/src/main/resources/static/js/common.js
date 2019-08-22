@@ -1,3 +1,11 @@
+function  libLoadEvnet(str){
+    console.log(`
+    ->  
+    ->  ${str}
+    ->  
+    `);
+}
+
 function _promise(url, data){
     return new Promise(function(resolve, reject){
         $.ajax({
@@ -23,9 +31,16 @@ let _toastEditor = (function(){
         create : function (elementID){
             this.editor = new tui.Editor({
                 el: document.querySelector('#'+elementID),
+                viewOnly : true,
                 initialEditType: 'markdown',
-                previewStyle: 'vertical',
+                previewStyle: 'tab',
                 height: '300px',
+                hooks : {
+                    addImageBlobHook : function (file, callBack){
+                        updateImage(file,callBack);
+                        return false;
+                    }
+                }
             });
             return this;
         },
@@ -41,6 +56,31 @@ let _toastEditor = (function(){
     }
 
 })();
+
+
+function updateImage (imageFile, callBack) {
+
+    let formData= new FormData();
+    formData.append("image", imageFile);
+
+    $.ajax({
+        url: '/file/imageUpload',
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: formData,
+        type: "post",
+        success: function(res) {
+            let path = '/resources/upload/' + res.fileList[0].path;
+            console.log(path);
+
+            callBack(path, 'test');
+        },
+        error: function(data) {
+            console.log(data);
+        }
+    });
+}
 
 let _summernote = (function (){
     return {

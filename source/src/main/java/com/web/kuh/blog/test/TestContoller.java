@@ -30,6 +30,12 @@ public class TestContoller {
     @Resource(name = "fileService")
     private FileService fileService;
 
+    @RequestMapping(value = "/")
+    public String page(@RequestParam Map<String,Object> req){
+
+        return "test/page";
+    }
+
     @RequestMapping(value = "/reqMap")
     public String requestMapTest(@RequestParam Map<String,Object> req){
 

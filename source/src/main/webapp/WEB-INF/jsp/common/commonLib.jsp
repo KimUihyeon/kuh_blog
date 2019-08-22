@@ -10,7 +10,8 @@
 <%--<link rel="stylesheet" href="/resources/css/bulma.css">--%>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="/resources/js/jquery/jquery3.4.1.js"></script>
+<script src="/resources/js/bootstrap/bootstrap.js"></script>
 <script src="/resources/js/moment.js"></script>
 <script src="/resources/js/axios.min.js"></script>
 <script src="/resources/js/vue.dev.js"></script>
@@ -18,5 +19,7 @@
 <%--<script src="/resources/js/vue.rel.js"></script>--%>
 <script> console.log('vue.relese load')</script>
 <script src="/resources/js/common.js"></script>
+
+<link href="/resources/css/bootstrap/bootstrap.css" rel="stylesheet">
 
 <script>$(function(){ console.log('jquery load')})</script>

@@ -41,7 +41,7 @@
                     let value = '이미지에요';
                     console.log(_toastEditor);
                     _toastEditor.insertImage(value, 'https://uicdn.toast.com/tui-editor/tui-editor-preview-1520325258239.gif');
-
+                    _toastEditor.editor.hooks.addImageBlobHook(file, function(dd){ console.log(dd) ; console.log('asdad')});
                 },
                 htmlToMark : function (){
                     var tt = `<p>asljkdhasd<br>
