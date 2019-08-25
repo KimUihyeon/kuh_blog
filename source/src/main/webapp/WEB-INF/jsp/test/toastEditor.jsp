@@ -35,7 +35,6 @@
             },
             methods : {
                 submit : function (){
-                    _toastEditor.
 
                 },
                 insert : function (){
