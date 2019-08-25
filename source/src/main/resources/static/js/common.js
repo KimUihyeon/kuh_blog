@@ -6,6 +6,19 @@ function  libLoadEvnet(str){
     `);
 }
 
+
+function blog_alert(title,context){
+    alert(context);
+}
+
+function blog_log(title,context){
+    console.log(context);
+}
+
+function blog_error(title,context){
+    console.error(context);
+}
+
 function _promise(url, data){
     return new Promise(function(resolve, reject){
         $.ajax({
@@ -43,6 +56,12 @@ let _toastEditor = (function(){
                 }
             });
             return this;
+        },
+        getMarkdown : function (){
+            return this.editor.getMarkdown();
+        },
+        getHtml : function (){
+            return this.editor.getHtml();
         },
         insertImage : function (orgIamgeName, url){
             let format = '!['+orgIamgeName+']('+url+')';
@@ -126,3 +145,10 @@ let _summernote = (function (){
         }
     }
 })();
+
+
+
+Vue.filter( 'dateFormate' , function(val){
+    let dateStr = new moment(val).format('YYYY.MM.DD');
+    return dateStr;
+})

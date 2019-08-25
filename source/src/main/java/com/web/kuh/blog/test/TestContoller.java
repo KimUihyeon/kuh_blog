@@ -1,6 +1,7 @@
 package com.web.kuh.blog.test;
 
 
+import com.web.kuh.blog.board.service.BoardService;
 import com.web.kuh.blog.common.service.FileService;
 import com.web.kuh.blog.test.Service.ITestService;
 import com.web.kuh.blog.test.vo.TestVo;
@@ -73,36 +74,6 @@ public class TestContoller {
 
     @RequestMapping(value = "/fileUpload")
     public @ResponseBody Map<String, Object> fileUpload(@RequestParam Map<String,Object> req, HttpServletRequest request){
-//        fileService.imageFileUpload((MultipartHttpServletRequest) request);
-//        List<String> list = new ArrayList<>();
-//        try{
-//            MultipartHttpServletRequest mhsr = (MultipartHttpServletRequest) request;
-//            Iterator iter = mhsr.getFileNames();
-//
-//
-//            while (iter.hasNext()){
-//                String fieldName = (String) iter.next();
-//                MultipartFile multipartFile = mhsr.getFile(fieldName);
-//
-//                String fileFullName = multipartFile.getOriginalFilename();
-//                String ext = fileFullName.substring(fileFullName.lastIndexOf((".")));
-//                String fileName = fileFullName.substring(0,fileFullName.lastIndexOf((".")));
-//
-//
-//                String tt = System.getProperty("user.dir");
-//                File file = new File(tt+ "/" + fileFullName);
-//                multipartFile.transferTo(file);
-//
-//                list.add(fileName);
-//            }
-//
-//
-//        } catch( Exception e){
-//            System.out.println(e);
-//
-//        }
-
-//        req.put("file",list);
         return req;
     }
 }

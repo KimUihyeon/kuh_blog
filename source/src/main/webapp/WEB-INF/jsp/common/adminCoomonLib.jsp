@@ -15,3 +15,8 @@
 <link rel="stylesheet" href="/resources/css/highlight/highlight.css"></link>
 
 <script src="/resources/js/tui.editor/tui-editor-full.js"></script>
+
+<script src="/resources/js/tui.editor/tui-editor-extChart.js"></script>
+<script src="/resources/js/tui.editor/tui-editor-extColorSyntax.js"></script>
+<script src="/resources/js/tui.editor/tui-editor-extScrollSync.js"></script>
+<script src="/resources/js/tui.editor/tui-editor-extUML.js"></script>

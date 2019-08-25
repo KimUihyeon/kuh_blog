@@ -6,7 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -31,11 +30,7 @@ public class MainController {
 
     @RequestMapping(value = "/paramTest")
     public String paramTest (@RequestParam Map<String, Object> req, Model model) throws Exception{
-
-
         model.addAttribute("map",req);
-
-
         return "main/page";
 
     }

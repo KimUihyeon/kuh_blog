@@ -14,18 +14,31 @@
 </head>
 
 <style>
-    /* */
+    /*font-family: 'Yellowtail', cursive;
+font-family: 'Vampiro One', cursive;
+font-family: 'Nanum Myeongjo', serif;
+font-family: 'Alex Brush', cursive;
+*/
     a, a:active, a:visited, a:hover{
         text-decoration: inherit;
         color: inherit;
     }
+    .margin-top-10{
+        margin-top: 10px;
+    }
+
+    .cicle-border-none{
+        display: block;
+        border: 1px solid;
+        border-radius: 100%;
+        overflow: hidden;
+    }
     /* Navigation */
     nav {
-        background: #00e7eb;
         height: 200px;
         text-align: right;
         padding: 10px;
-        position: relative;;
+        position: relative;
     }
     nav  .blog-menu-item{
         margin-left: 5px;
@@ -36,22 +49,71 @@
         height: 15px;
         margin-left: 3px;
     }
+    .nav-title-bottom-line{
+        height: 1px;
+        margin-left: 3%;
+        margin-right: 3%;
+        border-bottom: 1px solid #ffffffa1;
+    }
 
+    .font-size-nav-title {
+        text-align: center;
+        color: #ffffffa1;
+        font-family: 'Alex Brush', cursive;
+        padding: 10px;
+        font-size: 30px;
+    }
     .font-size-context-title{
-        font-size: 24px;
+        font-family: 'Nanum Myeongjo', serif;
+        font-size: 2em;
+        font-weight: bold;
+        color: #ffffffde;
+
+    }
+    .nav-bttom-arrow-box{
+        bottom: 5%;
+        position: absolute;
+        width: 100%;
+        transition: all 3s;
+    }
+    .nav-bottom-arrow{
+        margin: 0 auto;
+        display: block;
+        font-weight: 900;
+        color: #fff9;
+        font-size: 25px;
+        border: 1px solid #ffffff38;
+        padding: 5px;
+        border-radius: 30px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-ctg-context-ctg-border{
+
+        border: 1px solid #9c9c9c;
+        border-radius: 5px;
     }
     .font-size-context-ctg{
+        font-family: 'Nanum Myeongjo', serif;
         font-size: 14px;
+        color: #ffffff78;
+        padding: 5px;
+    }
+    .font-size-context-name {
+        font-size: 14px;
+        color: #ffffff78;
+    }
+
+    .blog-context-title{
+        font-size: 18px;
     }
 
     .blog-context-title-continer {
         width: 100%;
         text-align: left;
         position: absolute;
-        bottom:  0px;
-    }
-    .blog-context-title{
-        font-size: 18px;
+        top: 30%;
     }
 
     .blog-context-title-continer-decription {
@@ -87,43 +149,102 @@
     .footer .blog-footer {
         height: 100%;
     }
+    .footer .blog-footer .photoBox {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+    }
+    .footer .blog-footer .photoBox .photo {
+        width: 100%;
+        height: 100%;
+        background: #77ee77;
+    }
+    .nav-background-area{
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        background: #000000;
+        z-index: 0;
+        top: 0;
+        overflow: hidden;
+    }
+    .nav-serach-icon{
+        width: 20px;
+    }
+    .nav-background{
+        background: url("/resources/img/back.jpeg") no-repeat center 0;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    .author-box img{
+
+    }
+    .full-size-background{
+        height: 100%;
+    }
+    .margin-padding-zero{
+        margin: 0px;
+        padding: 0px;
+    }
+    .author-box img{
+        opacity: 0.5;
+        width: 30px;
+    }
 </style>
 <body>
-    <div>
-        <div class="row">
-            <div  class="col-md-12 "style="background: #0f81cc">
+    <div id="blog-app">
+        <div class="row full-size-background margin-padding-zero">
+            <div  class="col-md-12 full-size-background margin-padding-zero">
                 <!-- Image and text -->
-                <div  class="col-xs-12 col-md-8 col-md-offset-2"  style="background: #0f81cc">
-                    <nav>
-                        <span class="blog-menu-item"><a href="javascript:void(0)"><img >홈</a> </span>
-                        <span class="blog-menu-item"><a href="javascript:void(0)"><img >메뉴</a> </span>
+                <div class="nav-background-area full-size-background">
+                    <div class="nav-background full-size-background">
+                        <div class="topNav font-size-nav-title ">Devloper.log
+                            <span ><img class="nav-serach-icon" src="/resources/img/lib/loupe.svg"></span>
+                        </div>
+                        <div class="nav-title-bottom-line"></div>
+                    </div>
+
+                </div>
+                <div  class="col-xs-12 col-md-8 col-md-offset-2" >
+                    <nav class="full-size-background">
                         <div class="blog-context-title-continer">
                             <div class="blog-context-title">
-                                <span class="font-size-context-title">Title</span>
-                                <span class="font-size-context-ctg">ctg1</span>
-                                <span class="font-size-context-ctg"> > </span>
-                                <span class="font-size-context-ctg">ctg2</span>
+                                <div class="text-center">
+                                    <span class="font-size-context-title">{{context.title}}</span>
+                                </div>
+                                <div class="text-center margin-top-10">
+                                    <span class="font-size-context-ctg">Mysql</span>
+                                    <span class="font-size-context-ctg">/</span>
+                                    <span class="font-size-context-ctg">Error처리</span>
+
+                                    <span class="font-size-context-ctg nav-ctg-context-ctg-border">{{context.regDate | dateFormate}}</span>
+                                </div>
+
+
                             </div>
-                            <div class="blog-context-title-decription">
-                                <span></span><a href="javascript:void(0)"><img> kuh1318</a>
+                            <div class="blog-context-title-decription text-center author-box margin-top-10">
+                                <span class="font-size-context-name"> <a href="javascript:void(0)">author. <img src="/resources/img/lib/icons8-git-black.svg" alt="">KimUihyeon</a></span>
                             </div>
+                        </div>
+
+
+                        <div class="text-center nav-bttom-arrow-box ">
+                            <a href="javascript:void(0)" onclick="screenMove('#blog-main')" >
+                                <span class="nav-bottom-arrow">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </a>
                         </div>
                     </nav>
                 </div>
             </div>
         </div>
-        <div class="row blog-main">
-            <div  class="col-xs-12 col-md-8 col-md-offset-2"  style="background: #0f81cc">
+        <div class="row blog-main margin-padding-zero" id="blog-main">
+            <div  class="col-xs-12 col-md-8 col-md-offset-2">
                 <div class="blog-context-container">
                     <div class="blog-context">
-                        <pre>
-asdoihasd
-asdaksjhldhasldas'
-das'dh askldas
-dashlkd as
-dashdkjasd;lasjkdas
-dasdhkljashd;
-                        </pre>
+                        <div id="viewerSection" class="tui-editor-contents" v-html="context.contextHTML">
+                        </div>
                     </div>
                     <div class="blog-context-tag-container">
                         <div class="blog-context-tag"></div>
@@ -132,14 +253,62 @@ dasdhkljashd;
             </div>
         </div>
 
-        <div class="row">
+        <div class="row margin-padding-zero">
             <div class="col-md-12 footer" style="background: #00bb00">
                 <div  class="col-xs-12 col-md-8 col-md-offset-2"  style="background: #0f81cc">
                     <div class="blog-footer">
+                        <div class="col-xs-12 col-md-4">
+                            <div class="cicle-border-none photoBox">
+                                <div class="photo">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+<script>
+
+    // 뷰객채로 등록할것.
+    function screenMove(hash){
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 500, function(){
+
+            window.location.hash = hash;
+        });
+    }
+
+
+
+    let vm = new Vue({
+        el : '#blog-app',
+        data : {
+            context : {}
+        },
+        mounted : () =>{
+            _promise('/board/read', null)
+                .then((res)=>{ vm.context = res; console.log(res); })
+        }
+    })
+
+    function setDate(content){
+        console.log(content);
+
+        var editor = new tui.Editor({
+            el: document.querySelector('#viewerSection'),
+            isViewer : true,
+            height: '300px',
+            initialValue: content
+        });
+    }
+
+</script>
 </html>
