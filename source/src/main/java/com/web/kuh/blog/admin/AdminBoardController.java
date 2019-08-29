@@ -1,11 +1,13 @@
 package com.web.kuh.blog.admin;
 
 import com.web.kuh.blog.board.service.BoardService;
+import com.web.kuh.blog.board.vo.BoardVO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -25,8 +27,9 @@ public class AdminBoardController {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public void insert(@RequestParam Map<String, Object> req){
-        boardService.insert(req);
+    public @ResponseBody BoardVO  insert(@RequestParam Map<String, Object> req){
+        BoardVO vo =boardService.insert(req);
+        return vo;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.GET)
@@ -38,8 +41,9 @@ public class AdminBoardController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public void edit(@RequestParam Map<String, Object> req){
-        boardService.update(req);
+    public @ResponseBody BoardVO edit(@RequestParam Map<String, Object> req){
+
+        return boardService.update(req);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.POST)

@@ -28,20 +28,20 @@ public class BoardService {
         return aa.get(0);
     }
 
-    public void insert(Map<String,Object> reqMap){
+    public BoardVO insert(Map<String,Object> reqMap){
         BoardVO vo = new BoardVO(reqMap.get("blog_title").toString()
                                 ,reqMap.get("blog_context_md").toString()
                                 ,reqMap.get("blog_context_html").toString());
-        boardRepository.save(vo);
+        return boardRepository.save(vo);
     }
 
 
-    public void update(Map<String, Object> req) {
+    public BoardVO update(Map<String, Object> req) {
 
         BoardVO vo = new BoardVO(req.get("blog_title").toString()
                                 ,req.get("blog_context_md").toString()
                                 ,req.get("blog_context_html").toString());
         vo.setId(Integer.parseInt(req.get("blog_id").toString()));
-        boardRepository.save(vo);
+        return boardRepository.save(vo);
     }
 }

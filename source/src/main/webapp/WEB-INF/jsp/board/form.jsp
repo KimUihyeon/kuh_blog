@@ -32,10 +32,8 @@
 <script>
 
     let formType = '';
-
     let blogId ='${blog_id}';
-    let blogDetailUrl = '/board/read?id='+blogId;
-    let postUrl = '';
+
     let vm = new Vue({
         el : '#vue',
         data : {
@@ -56,7 +54,7 @@
                 else {
                     blog_log(null, '정상적인 접근');
 
-                    _promise(blogDetailUrl, null)
+                    _promise( vm.getReadUrl(blogId) , null)
                         .then((res)=>{
                             console.log(res);
                             vm.context.id = res.id;
@@ -80,6 +78,8 @@
                 _promise( vm.getFormUrl(formType) , data)
                     .then((res)=> {
                         console.log(res)
+                        blog_alert(null,'등록 되었습니다.');
+                        window.location.href = vm.getReadUrl(res.id)
                         return true;
                     })
                     .catch((error)=> {
@@ -89,7 +89,6 @@
                     .then((res)=>{
                         console.log(res);
                         if(res === true){
-                            window.location.href = blogDetailUrl;
                         }
                     });
 
@@ -99,6 +98,9 @@
                 let insertUrl = '/admin/board/insert';
                 let updateUrl = '/admin/board/update';
                 return (type === 'edit') ? updateUrl : insertUrl;
+            },
+            getReadUrl : (id) =>{
+                return '/board/read?id='+id;
             }
         }
     })
