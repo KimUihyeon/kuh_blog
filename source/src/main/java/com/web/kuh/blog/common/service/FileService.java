@@ -1,7 +1,6 @@
 package com.web.kuh.blog.common.service;
 
 
-import com.web.kuh.blog.common.vo.FileVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -83,7 +82,7 @@ public class FileService {
     public Map<String, Object> imageFileUpload(String absPath ,MultipartHttpServletRequest multipartRequest) throws Exception {
 
         Map<String, Object> map = new HashMap<>();
-        List<FileVo> fileList  = new ArrayList<>();
+//        List<FileVo> fileList  = new ArrayList<>();
         Iterator iter =  multipartRequest.getFileNames();
 
         try{
@@ -104,11 +103,10 @@ public class FileService {
 
                 File file = new File( getUploadAbsDirPath() , saveFileAbsPath);
                 multipartFile.transferTo(file);
-
-
-                FileVo fileVo = new FileVo();
-                fileVo.setPath(saveFileAbsPath);
-                fileList.add(fileVo);
+//
+//                FileVo fileVo = new FileVo();
+//                fileVo.setPath(saveFileAbsPath);
+//                fileList.add(fileVo);
             }
 
         }catch (Exception e){
@@ -116,7 +114,7 @@ public class FileService {
             throw new Exception(e);
         }
         finally {
-            map.put("fileList",fileList);
+//            map.put("fileList",fileList);
         }
         return map;
     }

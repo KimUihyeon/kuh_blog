@@ -144,7 +144,11 @@ font-family: 'Alex Brush', cursive;
     /* Footer */
 
     .footer{
-        height: 150px;
+        height: 250px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        background: rgb(243, 243, 243);
+        border-top: 1px solid #dcdcdc;
     }
     .footer .blog-footer {
         height: 100%;
@@ -153,6 +157,7 @@ font-family: 'Alex Brush', cursive;
         margin: 0 auto;
         width: 100px;
         height: 100px;
+        margin-top: 10px;
     }
     .footer .blog-footer .photoBox .photo {
         width: 100%;
@@ -189,6 +194,17 @@ font-family: 'Alex Brush', cursive;
     .author-box img{
         opacity: 0.5;
         width: 30px;
+    }
+    .footer i {
+        font-size: 18px;
+        margin: 4px;
+    }
+
+    .footer .footerHeader{
+        font-size: 24px;
+    }
+    .footer .footerDescription{
+        font-size: 12px;
     }
 </style>
 <body>
@@ -254,8 +270,8 @@ font-family: 'Alex Brush', cursive;
     </div>
 
     <div class="row margin-padding-zero">
-        <div class="col-md-12 footer" style="background: #00bb00">
-            <div  class="col-xs-12 col-md-8 col-md-offset-2"  style="background: #0f81cc">
+        <div class="col-md-12 footer" style="background: rgb(243, 243, 243);" >
+            <div  class="col-xs-12 col-md-8 col-md-offset-2" >
                 <div class="blog-footer">
                     <div class="col-xs-12 col-md-4">
                         <div class="cicle-border-none photoBox">
@@ -264,8 +280,21 @@ font-family: 'Alex Brush', cursive;
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-6">
-                        <span></span>
+                    <div class="col-xs-12 col-md-8">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div><span class="footerHeader">herda</span></div>
+                                <div><i class="fas fa-portrait"></i><span class="footerDescription">KimUihyeon</span></div>
+                                <div><i class="fas fa-map-marker-alt"></i><span class="footerDescription">Bundang-gu, Seongnam-si</span></div>
+                                <div><i class="fab fa-github"></i><a href="https://github.com/KimUihyeon"><span class="footerDescription">https://github.com/KimUihyeon</span></a></div>
+                            </div>
+                            <div class="col-md-6">
+                                <div><span class="footerHeader">&nbsp;</span></div>
+                                <div><i class="fas fa-cubes"></i><span class="footerDescription">Spring, </span></div>
+                                <div><i class="fas fa-database"></i><span class="footerDescription">Bundang-gu, Seongnam-si</span></div>
+                                <div><i class="fab fa-github"></i><a href="https://github.com/KimUihyeon"><span class="footerDescription">https://github.com/KimUihyeon</span></a></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
