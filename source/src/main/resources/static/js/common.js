@@ -19,6 +19,8 @@ function blog_error(title,context){
     console.error(context);
 }
 
+
+
 function _promise(url, data){
     return new Promise(function(resolve, reject){
         $.ajax({
@@ -34,6 +36,43 @@ function _promise(url, data){
         })
     });
 }
+
+
+let _toastGrid = (function (){
+
+    return {
+        grid : null,
+        instance : null,
+        create : function (elementID, columns) {
+            const Grid = tui.Grid;
+            const instance = new Grid({
+                el: document.getElementById('grid'), // Container element
+                columns: columns
+            });
+            Grid.applyTheme('striped'); // Call API of static method
+
+            this.instance = instance;
+            this.grid = Grid;
+
+            return this;
+        },
+
+        addRow : function (rowData){
+            this.instance.appendRow(rowData);
+        },
+        addRows : function (rowDatas){
+            for ( data  of rowDatas ){
+                console.log(data);
+                this.addRow(data);
+            }
+        },
+        gridReFlash : function (newDatas){
+            instance.clear();
+            this.addRows(newDatas);
+        }
+
+    }
+})();
 
 
 

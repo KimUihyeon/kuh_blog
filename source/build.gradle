@@ -48,4 +48,10 @@ dependencies {
     compile 'org.apache.tomcat.embed:tomcat-embed-jasper'
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     // end Jsp
+
+
+    // tiles 타일즈
+    compile group: 'org.apache.tiles', name: 'tiles-jsp', version: '3.0.7'
+    compile group: 'org.apache.tiles', name: 'tiles-core', version: '3.0.7'
+    // tiles end
 }

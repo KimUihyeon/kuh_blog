@@ -145,6 +145,7 @@ font-family: 'Alex Brush', cursive;
 
     .footer{
         height: 150px;
+        padding-top: 15px;
     }
     .footer .blog-footer {
         height: 100%;
@@ -183,8 +184,10 @@ font-family: 'Alex Brush', cursive;
         height: 100%;
     }
     .margin-padding-zero{
-        margin: 0px;
-        padding: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
     }
     .author-box img{
         opacity: 0.5;

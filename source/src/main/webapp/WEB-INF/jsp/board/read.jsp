@@ -29,7 +29,7 @@ font-family: 'Alex Brush', cursive;
 
     .cicle-border-none{
         display: block;
-        border: 1px solid;
+        border: 1px solid #8c8c8c;
         border-radius: 100%;
         overflow: hidden;
     }
@@ -139,17 +139,25 @@ font-family: 'Alex Brush', cursive;
 
     }
     .blog-context-container .blog-context-tag-container .blog-context-tag{
-
+        margin: 15px;
+        padding: 5px;
+        background: #eee;
+    }
+    .blog-context-container .blog-context-tag-container .blog-context-tag .label {
+        background-color: #afafaf;
     }
     /* Footer */
 
+
     .footer{
-        height: 250px;
         padding-top: 15px;
         padding-bottom: 15px;
         background: rgb(243, 243, 243);
         border-top: 1px solid #dcdcdc;
     }
+    @media screen and (min-width: 769px) { .footer { height: 150px;} }
+    @media screen and (max-width: 768px) { .footer { height: 250px;} }
+
     .footer .blog-footer {
         height: 100%;
     }
@@ -162,7 +170,8 @@ font-family: 'Alex Brush', cursive;
     .footer .blog-footer .photoBox .photo {
         width: 100%;
         height: 100%;
-        background: #77ee77;
+        background: url("/resources/img/back.jpeg") no-repeat center 0;
+        background-size: cover;
     }
     .nav-background-area{
         width: 100%;
@@ -202,6 +211,7 @@ font-family: 'Alex Brush', cursive;
 
     .footer .footerHeader{
         font-size: 24px;
+        font-weight: bold;
     }
     .footer .footerDescription{
         font-size: 12px;
@@ -255,44 +265,75 @@ font-family: 'Alex Brush', cursive;
             </div>
         </div>
     </div>
-    <div class="row blog-main margin-padding-zero" id="blog-main">
-        <div  class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="row blog-main margin-padding-zero" id="blog-main"><!-- 메인 -->
+        <div  class="col-xs-12   col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
             <div class="blog-context-container">
                 <div class="blog-context">
                     <div id="viewerSection" class="tui-editor-contents" v-html="context.contextHTML">
                     </div>
                 </div>
                 <div class="blog-context-tag-container">
-                    <div class="blog-context-tag"></div>
+                    <div class="blog-context-tag">
+                        <span class="label label-primary">Primary</span>
+                        <span class="label label-success">Success</span>
+                        <span class="label label-info">Info</span>
+                        <span class="label label-warning">Warning</span>
+                        <span class="label label-danger">Danger</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row margin-padding-zero">
-        <div class="col-md-12 footer" style="background: rgb(243, 243, 243);" >
+    <div class="row margin-padding-zero"> <!-- List -->
+        <div class="col-xs-12   col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div>유사한 주제의 게시물</div>
+                    <ul>
+                        <li><span>1123129837218 asdlkashd lkasjd lakdjl937219</span></li>
+                        <li><span>1</span></li>
+                        <li><span>1</span></li>
+                        <li><span>1</span></li>
+                        <li><span>1</span></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row margin-padding-zero  footer"><!-- footer -->
+        <div class="col-md-12" style="background: rgb(243, 243, 243);" >
             <div  class="col-xs-12 col-md-8 col-md-offset-2" >
                 <div class="blog-footer">
-                    <div class="col-xs-12 col-md-4">
+                    <div class="col-xs-12 col-md-4 col-sm-4">
                         <div class="cicle-border-none photoBox">
                             <div class="photo">
 
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-8">
+                    <div class="col-xs-12 col-md-8 col-sm-8">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div><span class="footerHeader">herda</span></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-xs-6" col-sm-6 >
                                 <div><i class="fas fa-portrait"></i><span class="footerDescription">KimUihyeon</span></div>
                                 <div><i class="fas fa-map-marker-alt"></i><span class="footerDescription">Bundang-gu, Seongnam-si</span></div>
                                 <div><i class="fab fa-github"></i><a href="https://github.com/KimUihyeon"><span class="footerDescription">https://github.com/KimUihyeon</span></a></div>
                             </div>
-                            <div class="col-md-6">
-                                <div><span class="footerHeader">&nbsp;</span></div>
-                                <div><i class="fas fa-cubes"></i><span class="footerDescription">Spring, </span></div>
-                                <div><i class="fas fa-database"></i><span class="footerDescription">Bundang-gu, Seongnam-si</span></div>
-                                <div><i class="fab fa-github"></i><a href="https://github.com/KimUihyeon"><span class="footerDescription">https://github.com/KimUihyeon</span></a></div>
+                            <div class="col-md-6 col-xs-6 col-sm-6">
+                                <div><i class="fas fa-cubes"></i><span class="footerDescription">Spring, WPF, Node Express, Vue, React, Azure devops, AWS </span></div>
+                                <div><i class="fas fa-database"></i><span class="footerDescription">mySql, SqlServer,Oracle</span></div>
                             </div>
                         </div>
                     </div>
@@ -300,6 +341,7 @@ font-family: 'Alex Brush', cursive;
             </div>
         </div>
     </div>
+
 </div>
 </body>
 
@@ -314,8 +356,6 @@ font-family: 'Alex Brush', cursive;
             window.location.hash = hash;
         });
     }
-
-
 
     let vm = new Vue({
         el : '#blog-app',

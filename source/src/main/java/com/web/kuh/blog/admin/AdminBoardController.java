@@ -19,6 +19,16 @@ public class AdminBoardController {
     @Resource(name = "boardService")
     private BoardService boardService;
 
+    @RequestMapping(value = "/list" , method = RequestMethod.GET)
+    public String boardListPage(){
+        return "admin/boardList";
+    }
+
+    @RequestMapping(value = "/list" , method = RequestMethod.POST)
+    public String boardList(){
+        return "admin/boardList";
+    }
+
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String inserPage(@RequestParam Map<String, Object> req, Model model){
 

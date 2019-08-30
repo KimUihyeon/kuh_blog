@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="/resources/css/tui.editor/tui-editor-contents.css"></link>
 <link rel="stylesheet" href="/resources/css/codemirror/codemirror.css"></link>
 <link rel="stylesheet" href="/resources/css/highlight/highlight.css"></link>
+<link rel="stylesheet" href="https://uicdn.toast.com/tui-grid/latest/tui-grid.css" />
+
 
 <script src="/resources/js/tui.editor/tui-editor-full.js"></script>
 
@@ -20,3 +22,4 @@
 <script src="/resources/js/tui.editor/tui-editor-extColorSyntax.js"></script>
 <script src="/resources/js/tui.editor/tui-editor-extScrollSync.js"></script>
 <script src="/resources/js/tui.editor/tui-editor-extUML.js"></script>
+<script src="https://uicdn.toast.com/tui-grid/latest/tui-grid.js"></script>

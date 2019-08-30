@@ -44,4 +44,13 @@ public class BoardService {
         vo.setId(Integer.parseInt(req.get("blog_id").toString()));
         return boardRepository.save(vo);
     }
+
+    public List<BoardVO> list( Map<String, Object> req){
+        List<BoardVO> datas = new ArrayList<>();
+
+        Iterable<BoardVO> iter =  boardRepository.findAll();
+        iter.forEach(datas::add);
+
+        return datas;
+    }
 }

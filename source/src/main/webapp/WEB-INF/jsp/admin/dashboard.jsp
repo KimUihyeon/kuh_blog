@@ -11,6 +11,12 @@
     <title>Title</title>
 </head>
 <body>
+    <div>
+        <jsp:include page="/WEB-INF/jsp/admin/menu.jsp"></jsp:include>
 
+    </div>
+
+    <script>
+    </script>
 </body>
 </html>
